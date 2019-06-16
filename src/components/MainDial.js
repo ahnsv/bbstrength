@@ -5,12 +5,11 @@ const MainDial = ({title}) => {
     const [value, setValue] = useState(0);
     const [preValue, setPrevValue] = useState([]);
     const curr = useRef(null);
-    const enter = () => {
-        curr.current.className = "enter";
-    };
     useEffect(() => {
-        // TODO: add classname using use ref
-        window.requestAnimationFrame(enter);
+        curr.current.classList.toggle("enter");
+        setTimeout(() => {
+            curr.current.classList.toggle("enter");
+        }, 500);
         return () => {
             setPrevValue(prev => {
                 if (!prev.length) {
