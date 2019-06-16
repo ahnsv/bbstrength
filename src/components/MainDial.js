@@ -1,10 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import "./styles/MainDial.scss"
 
 const MainDial = ({title}) => {
     const [value, setValue] = useState(0);
     const [preValue, setPrevValue] = useState([]);
+    const curr = useRef(null);
+    const enter = () => {
+        curr.current.className = "enter";
+    };
     useEffect(() => {
+        // TODO: add classname using use ref
+        window.requestAnimationFrame(enter);
         return () => {
             setPrevValue(prev => {
                 if (!prev.length) {
@@ -23,7 +29,8 @@ const MainDial = ({title}) => {
             <div className="main-dial--value">
                 <div className="main-dial--value__title">{title}</div>
                 <div className="main-dial--value__value">
-                    {preValue}{value}
+                    <div className="main-dial--value__value--prev">{preValue}</div>
+                    <div className="main-dial--value__value--curr" ref={curr}>{value}</div>
                 </div>
                 <div className="main-dial--value__clear">
                     {"<-"}
