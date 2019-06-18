@@ -56,7 +56,7 @@ const MainDial = ({title}) => {
                 <div className="main-dial--value__wrapper">
                     <div className="main-dial--value__value">
                         <div className="main-dial--value__value--prev">{handleNull(prevValue, "")}</div>
-                        <div className="main-dial--value__value--curr" ref={curr}>{handleNull(currValue, 0)}</div>
+                        <div className="main-dial--value__value--curr" ref={curr} data-testid={`currentValue`}>{handleNull(currValue, 0)}</div>
                     </div>
                     <div className="main-dial--value__clear" onClick={handleClear}>
                         <BackspaceArrow width={`50px`} height={`100%`}/>
@@ -77,6 +77,7 @@ const MainDial = ({title}) => {
                     <div className={`main-dial--number__digit`}
                          key={index}
                          onClick={() => setValue(val => val + digit)}
+                         data-testid={`inputDial` + index}
                     >
                         {digit}
                     </div>

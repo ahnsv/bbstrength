@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import MainDial from "./components/MainDial";
 
+// TODO: add theme context
 function App() {
     return (
         <div className="App">

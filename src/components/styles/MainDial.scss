@@ -5,6 +5,17 @@
   align-items: center;
   justify-content: center;
   height: inherit;
+  transition: all 500ms linear;
+
+  &.dark {
+    background-color: #333333;
+    color: white;
+    transition: all 500ms linear;
+
+    svg {
+      fill: white;
+    }
+  }
 
   .main-dial--value {
     margin-bottom: auto;
