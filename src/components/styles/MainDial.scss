@@ -10,6 +10,8 @@
     margin-bottom: auto;
     font-size: 1.5rem;
     padding: 5vh 5vw;
+    max-width: calc(100% - 10vw);
+
 
     .main-dial--value__title {
       text-align: left;
@@ -17,16 +19,39 @@
       word-break: keep-all;
     }
 
-    .main-dial--value__value {
-      font-size: 3rem;
+    .main-dial--value__wrapper {
       display: flex;
-      justify-content: center;
+      align-items: center;
 
-      .main-dial--value__value--curr {
-        &.enter {
-          animation: slideInRight 500ms cubic-bezier(0.47, 0, 0.75, 0.72);
+      .main-dial--value__clear {
+        flex: 0.1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .main-dial--value__value {
+        font-size: 3rem;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        overflow: hidden;
+
+
+        .main-dial--value__value--curr {
+          transition: all 500ms linear;
+
+          &.enter {
+            animation: slideInRight 500ms cubic-bezier(0.47, 0, 0.75, 0.72) both;
+          }
         }
       }
+    }
+
+    .setsReps {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 
