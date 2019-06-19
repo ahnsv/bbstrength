@@ -1,0 +1,41 @@
+.card-carousel {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: inherit;
+  padding: 10px;
+
+  .card-carousel--indicator {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .indicator--dot {
+      display: flex;
+      flex-direction: row;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      /* border: 2px solid; */
+      box-shadow: 3px 3px 3px #00000020;
+      transition: all 500ms linear;
+      &.active {
+        background-color: #00000020;
+        transition: all 500ms linear;
+      }
+    }
+
+  }
+
+  .card-carousel--content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    max-height: 80vh;
+    overflow-x: scroll;
+  }
+}
+
+
